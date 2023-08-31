@@ -20,6 +20,10 @@ kemudian silahkan import Collection Postman.
 docker-compose ini sudah saya lengkapi dengan pengecekan sampai proses pembuatan database selesai dan proses migrasi
 secara normal aplikasi akan berjalan di link tersebut
 
+```bash
+    Proses pembuatan container membutuhkan waktu 1 - 3 menit, menyesuaikan koneksi internet dan kemampuan perangkat
+```
+
 ## Deskripsi Proyek
 
 Proyek ini dibangun menggunakan [Django](https://www.djangoproject.com/) dan [Django Rest Framework](https://www.django-rest-framework.org/). Ini menyediakan RESTful API untuk:
