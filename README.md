@@ -21,7 +21,8 @@ docker-compose ini sudah saya lengkapi dengan pengecekan sampai proses pembuatan
 secara normal aplikasi akan berjalan di link tersebut
 
 ```bash
-    Proses pembuatan container membutuhkan waktu 1 - 3 menit, menyesuaikan koneksi internet dan kemampuan perangkat
+    Proses pembuatan container membutuhkan waktu 1 - 3 menit
+    menyesuaikan koneksi internet dan kemampuan perangkat
 ```
 
 ## Deskripsi Proyek
