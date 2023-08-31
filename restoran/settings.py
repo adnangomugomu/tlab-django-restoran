@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-rb88(tan$se8f+3d(0ygd3pm51#)t81!&lx4#bl0ltf(bzpvm!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -71,8 +71,8 @@ DATABASES = {
         'NAME': 'restoran',
         'USER': 'password',
         'PASSWORD': 'password12345',
-        'HOST': '0.0.0.0',
-        'PORT': '3307',
+        'HOST': 'mysql8',
+        'PORT': '3306',
     }
 }
 

@@ -1,0 +1,42 @@
+version: '3.9'
+
+services:        
+    mysql8:
+        platform: linux/x86_64
+        image: mysql:8.0
+        container_name: my_mysql8
+        command: mysqld --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: root123
+            MYSQL_DATABASE: restoran
+            MYSQL_USER: password
+            MYSQL_PASSWORD: password12345
+            MYSQL_MAX_ALLOWED_PACKET: 256M
+        ports:
+            - '3306:3306'
+        volumes:
+            - ./setup.sql:/docker-entrypoint-initdb.d/setup.sql
+            - ./docker_source/mysql_data80:/var/lib/mysql
+        networks:
+            - my_network
+
+    web:
+        container_name: django_app
+        build:
+            dockerfile: Dockerfile
+        ports:
+            - "8000:8000"        
+        networks:
+            - my_network
+        restart: always
+        depends_on:
+            - mysql8
+        healthcheck:
+            test: ["CMD","python3", "manage.py", "runserver","0.0.0.0:8000"]
+            interval: 30s
+            timeout: 10s
+            retries: 5
+
+networks:
+    my_network:
