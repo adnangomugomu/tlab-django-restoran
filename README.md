@@ -5,7 +5,7 @@ Ini adalah proyek API untuk kebutuhan restoran, yang mencakup manajemen bahan, k
 
 ## Installation
 
-jalankan projek dengan perintah docker-compose, pastikan port 8000 dan 3006 tidak digunakan oleh aplikasi lainnya.
+jalankan projek dengan perintah docker-compose, pastikan port 8000 dan 3306 tidak digunakan oleh aplikasi lainnya.
 
 ```bash
   cd tlab-django-restoran
@@ -17,8 +17,8 @@ kemudian silahkan import Collection Postman.
 ```bash
     http://localhost:8000/
 ```
-
-jika berhasil maka aplikasi berjalan di link tersebut
+docker-compose ini sudah saya lengkapi dengan pengecekan sampai proses pembuatan database selesai dan proses migrasi
+secara normal aplikasi akan berjalan di link tersebut
 
 ## Deskripsi Proyek
 
