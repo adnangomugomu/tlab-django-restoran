@@ -2,6 +2,24 @@
 
 Ini adalah proyek API untuk kebutuhan restoran, yang mencakup manajemen bahan, kategori, dan resep makanan.
 
+
+## Installation
+
+jalankan projek dengan perintah docker-compose, pastikan port 8000 dan 3006 tidak digunakan oleh aplikasi lainnya.
+
+```bash
+  cd tlab-django-restoran
+  docker-compose up --build -d
+```
+Tunggu sampai proses pembuatan container selesai
+kemudian silahkan import Collection Postman.
+
+```bash
+    http://localhost:8000/
+```
+
+jika berhasil maka aplikasi berjalan di link tersebut
+
 ## Deskripsi Proyek
 
 Proyek ini dibangun menggunakan [Django](https://www.djangoproject.com/) dan [Django Rest Framework](https://www.django-rest-framework.org/). Ini menyediakan RESTful API untuk:
@@ -16,3 +34,4 @@ Proyek ini dibangun menggunakan [Django](https://www.djangoproject.com/) dan [Dj
 - Membuat, membaca, memperbarui, dan menghapus kategori.
 - Membuat, membaca, memperbarui, dan menghapus resep makanan.
 - Pencarian resep berdasarkan nama, bahan, dan kategori.
+
