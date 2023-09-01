@@ -13,7 +13,7 @@ class KategoriViewset(GenericAPIView):
             if not data:
                 return Response({
                     'message': 'Data tidak ditemukan',
-                }, 404)
+                }, 204)
             serializer = KategoriSerializers(data, many=True)
             return Response({
                 'message': 'OK',
@@ -44,7 +44,7 @@ class KategoriViewset(GenericAPIView):
         if not data:
             return Response({
                 'message': 'Data tidak ditemukan',
-            }, 404)
+            }, 204)
 
         data_new=request.data
         data_new['updated'] = timezone.now()
@@ -62,9 +62,9 @@ class KategoriViewset(GenericAPIView):
         if not data:
             return Response({
                 'message': 'Data tidak ditemukan',
-            }, 404)
+            }, 204)
 
         data.soft_delete()
         return Response({
             'message': 'Data berhasil dihapus',
-        }, 204)
+        }, 200)

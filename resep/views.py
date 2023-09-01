@@ -13,7 +13,7 @@ class ResepViewset(GenericAPIView):
             if not data:
                 return Response({
                     'message': 'Data tidak ditemukan',
-                }, 404)
+                }, 204)
             serializer = ResepSerializers(data, many=True)            
             return Response({
                 'message': 'OK',
@@ -44,7 +44,7 @@ class ResepViewset(GenericAPIView):
         if not data:
             return Response({
                 'message': 'Data tidak ditemukan',
-            }, 404)
+            }, 204)
 
         data_new=request.data
         data_new['updated'] = timezone.now()
@@ -62,12 +62,12 @@ class ResepViewset(GenericAPIView):
         if not data:
             return Response({
                 'message': 'Data tidak ditemukan',
-            }, 404)
+            }, 204)
 
         data.soft_delete()
         return Response({
             'message': 'Data berhasil dihapus',
-        }, 204)
+        }, 200)
 
 class CariResepViewset(GenericAPIView):
 
@@ -85,7 +85,7 @@ class CariResepViewset(GenericAPIView):
         if not data_filter:
               return Response({
                 'message': 'Data tidak ditemukan',
-            }, 404)
+            }, 204)
 
         serializer = ResepSerializers(data_filter, many=True)            
         return Response({
