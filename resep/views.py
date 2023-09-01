@@ -82,6 +82,11 @@ class CariResepViewset(GenericAPIView):
         if kategori: query &= Q(kategori__nama__icontains=kategori)
         
         data_filter = Resep.objects.filter(query)
+        if not data_filter:
+              return Response({
+                'message': 'Data tidak ditemukan',
+            }, 404)
+
         serializer = ResepSerializers(data_filter, many=True)            
         return Response({
             'message': 'OK',
