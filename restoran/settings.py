@@ -71,8 +71,8 @@ DATABASES = {
         'NAME': 'restoran',
         'USER': 'password',
         'PASSWORD': 'password12345',
-        'HOST': 'mysql8',
-        'PORT': '3306',
+        'HOST': '0.0.0.0',
+        'PORT': '3307',
     }
 }
 

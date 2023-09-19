@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN apt-get update && apt-get install -y netcat-traditional
+RUN apt update && apt install -y netcat-traditional
 
 RUN chmod +x /app/entrypoint.sh
 
